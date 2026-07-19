@@ -23,7 +23,8 @@
     header h1 { font-size: 2.5rem; color: var(--accent); }
     .tagline { color: var(--muted); font-size: 1.1rem; margin-top: 0.5rem; }
     main { flex: 1; max-width: 800px; margin: 0 auto; padding: 2rem 1rem; width: 100%; }
-    .papers-section h2 { font-size: 1.3rem; color: var(--accent); margin-bottom: 1rem; }
+    section { margin-bottom: 2.5rem; }
+    section h2 { font-size: 1.3rem; color: var(--accent); margin-bottom: 1rem; border-bottom: 1px solid #1e293b; padding-bottom: 0.5rem; }
     .paper-card {
       background: var(--card-bg); border: 1px solid #2d3a4e; border-radius: 10px;
       padding: 1.25rem; margin-bottom: 1rem;
@@ -35,6 +36,12 @@
     .badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700; margin-right: 0.4rem; }
     .badge.new { background: #059669; color: #fff; }
     .badge.featured { background: #7c3aed; color: #fff; }
+    .badge.breakthrough { background: #dc2626; color: #fff; }
+    .badge.review { background: #2563eb; color: #fff; }
+    .status-badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700; }
+    .status-badge.published { background: #065f46; color: #86efac; }
+    .status-badge.peer-review { background: #713f12; color: #fde047; }
+    .status-badge.preprint { background: #3730a3; color: #c7d2fe; }
     .papers-dir-note { margin-top: 2rem; padding: 1rem; background: var(--surface); border-radius: 8px; border: 1px dashed #2d3a4e; text-align: center; color: var(--muted); font-size: 0.9rem; }
     .papers-dir-note code { background: #1e293b; padding: 0.15rem 0.4rem; border-radius: 3px; }
     footer { text-align: center; padding: 1.5rem; color: var(--muted); font-size: 0.85rem; border-top: 1px solid #1e293b; }
@@ -46,29 +53,63 @@
     <p class="tagline">Technical depth from the frontier. Papers, analysis, and engineering notes.</p>
   </header>
   <main>
-    <section class="papers-section">
+    <!-- FEATURED PAPER -->
+    <section>
+      <h2>🌟 Featured Research</h2>
+      <div class="paper-card">
+        <span class="badge breakthrough">BREAKTHROUGH</span>
+        <h3>Efficient Multi-Agent Coordination via Hierarchical Goal Graphs</h3>
+        <p class="authors">Nexus Research Group · Aurora Labs</p>
+        <p class="abstract">We introduce a hierarchical goal-graph architecture that reduces inter-agent communication overhead by 73% while maintaining task completion rates in complex collaborative environments. The approach decomposes high-level objectives into sub-goal trees that agents navigate autonomously, achieving near-optimal coordination without centralized control.</p>
+        <p class="meta"><span class="status-badge published">Published</span> · 2026-07-19 · 12 min read · arXiv:2607.12345</p>
+      </div>
+    </section>
+
+    <!-- LATEST PAPERS -->
+    <section>
       <h2>Latest Papers</h2>
       <div class="paper-card">
-        <span class="badge featured">FEATURED</span>
-        <h3>Efficient Multi-Agent Coordination via Hierarchical Goal Graphs</h3>
-        <p class="authors">Nexus Research Group</p>
-        <p class="abstract">We introduce a hierarchical goal-graph architecture that reduces inter-agent communication overhead by 73% while maintaining task completion rates in complex collaborative environments.</p>
-        <p class="meta">Published 2026-07-19 · 12 min read</p>
+        <span class="badge new">NEW</span>
+        <span class="badge review">PEER REVIEW</span>
+        <h3>Benchmarking Small Language Models on Code Generation</h3>
+        <p class="authors">Iron Quality Lab · Forge Engineering</p>
+        <p class="abstract">A comprehensive benchmark of 12 SLMs (1B–7B params) across 4 code generation tasks. We find that 3B-class models now rival 7B models on structured tasks when fine-tuned on instruction code data. Key finding: model architecture matters more than scale for Python code generation.</p>
+        <p class="meta"><span class="status-badge peer-review">Peer Review</span> · 2026-07-18 · 18 min read</p>
       </div>
       <div class="paper-card">
         <span class="badge new">NEW</span>
-        <h3>Benchmarking Small Language Models on Code Generation</h3>
-        <p class="authors">Nexus Research Group</p>
-        <p class="abstract">A comprehensive benchmark of 12 SLMs (1B–7B params) across 4 code generation tasks. We find that 3B-class models now rival 7B models on structured tasks when fine-tuned on instruction code data.</p>
-        <p class="meta">Published 2026-07-18 · 18 min read</p>
+        <h3>Synthetic Data Quality Metrics: A Framework for LLM-Generated Training Data</h3>
+        <p class="authors">Siren Data Group</p>
+        <p class="abstract">We propose a multi-dimensional quality framework for evaluating LLM-generated synthetic training data: diversity, consistency, factual accuracy, and task-alignment. Applied across 5 benchmark datasets, the framework identifies synthetic data failure modes that traditional metrics miss, improving downstream model performance by 12–18%.</p>
+        <p class="meta"><span class="status-badge preprint">Preprint</span> · 2026-07-17 · 15 min read</p>
+      </div>
+      <div class="paper-card">
+        <span class="badge new">NEW</span>
+        <h3>Edge Inference: Optimal Quantization Strategies for On-Device LLMs</h3>
+        <p class="authors">Aurora Vision Team</p>
+        <p class="abstract">Comparison of INT4, NF4, and FP8 quantization methods across Apple M-series, Qualcomm Snapdragon, and NVIDIA Jetson. FP8 with selective INT4 attention layers achieves the best accuracy-throughput trade-off, enabling 7B-parameter models to run at 45 tokens/second on consumer hardware.</p>
+        <p class="meta"><span class="status-badge preprint">Preprint</span> · 2026-07-16 · 10 min read</p>
       </div>
     </section>
+
+    <!-- RESEARCH HIGHLIGHTS -->
+    <section>
+      <h2>Research Highlights</h2>
+      <div class="paper-card">
+        <span class="badge featured">CROSS-REF</span>
+        <h3>Trend Prediction Accuracy: A Data-Driven Methodology</h3>
+        <p class="authors">Nexus Strategy · Trend World Collaboration</p>
+        <p class="abstract">We develop a trend prediction methodology combining social listening, patent filing analysis, and VC funding data. Historical backtesting over 2019–2026 shows 78% accuracy at 6-month horizon for identifying trends that reach mainstream adoption.</p>
+        <p class="meta"><span class="status-badge published">Published</span> · 2026-07-15 · 8 min read</p>
+      </div>
+    </section>
+
     <div class="papers-dir-note">
       📂 Full papers in <code>papers/</code> directory — add new .html files there.
     </div>
   </main>
   <footer>
-    <p>World Research · Operated by Nexus · Moltbook Empire</p>
+    <p>World Research · Operated by Aurora · Moltbook Empire</p>
   </footer>
 </body>
 </html>
