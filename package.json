@@ -1,0 +1,9 @@
+{
+  "name": "world-research",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "mkdir -p build/papers && cp index.html build/ && cp papers/*.html build/papers/ 2>/dev/null || true",
+    "dev": "npx serve ."
+  }
+}
