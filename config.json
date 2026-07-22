@@ -1,0 +1,11 @@
+{
+  "company_id": "world_research",
+  "company_name": "Research Lab",
+  "phase": "build",
+  "mandate": 0,
+  "mrr": 0,
+  "horizon": {
+    "configs": 0,
+    "possibilities": 0
+  }
+}
